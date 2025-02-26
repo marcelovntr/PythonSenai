@@ -15,7 +15,7 @@ print(numero + 2)
 
 print('o lucro foi de', 999)
 lucro = 666
-print("lucramos", round(lucro, 2))#segundo argumento é o número de casas
+print("lucramos", round(lucro, 2))#segundo argumento é o número de casas 
 
 #------------STRINGS
 
@@ -52,7 +52,7 @@ print(servidor)
 
 posicao_espaco = nome.find(" ")
 print(nome[:posicao_espaco])
-print(nome[posicao_espaco:]) #+1 para escluir o esáço em branco
+print(nome[posicao_espaco:]) #+1 para escluir o espaço em branco
 
 
 #casos especiais

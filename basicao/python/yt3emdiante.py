@@ -20,7 +20,7 @@ produtos = ['rola', 'jamanta', 'maçã', 'playstation', 'jamanta']
 # produto_buscado = input("insira o produto desejado: ")
 # produto_buscado = produto_buscado.lower()
 
-# print(produto_buscado  in produtos)#retorna booleano
+# print(produto_buscado in produtos)#retorna booleano
 
 produtos.append('mama')
 produtos.remove('rola')

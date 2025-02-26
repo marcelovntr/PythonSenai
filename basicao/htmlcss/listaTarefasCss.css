@@ -1,0 +1,75 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center; 
+    flex-direction: column;
+    align-items: center;
+    height: 100%vh;
+    width: 100%vw;
+    
+   
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 700px;
+    margin: 100px 0;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    max-width: 600px;
+    margin: 100px 0;
+    
+    padding: 20px; /* Adiciona padding ao main */
+    border: 1px solid #4e0848; 
+    box-shadow: 10px 0 10px rgba(141, 33, 151, 0.5); /* Adiciona sombra */
+   
+}
+
+.lista-de-afazeres {
+    list-style: none; /* Remove os marcadores de lista */
+    padding: 0;
+    width: 100%;
+}
+
+.item-da-lista {
+    margin-bottom: 10px; /* Adiciona espaço entre os itens */
+    display: flex;
+    align-items: center;
+}
+
+ input[type="checkbox"] {/*{ penas elementos <input> que têm o atributo type definido como checkbox. */
+    margin-right: 5px; /* Adiciona espaço entre o checkbox e o label */
+}
+input[type="checkbox"]:checked + label {
+    text-decoration: line-through; /* Risca o texto quando marcado */
+    color: #888;
+}
+
+header, footer {
+    position: fixed;
+    width: 100%;
+    background-color: #f9b2fc;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header {
+    top: 0;
+}
+
+footer {
+    bottom: 0;
+}
