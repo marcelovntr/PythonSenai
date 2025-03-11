@@ -1,0 +1,30 @@
+{% extends "myproject/global/index.html" %}
+{% load static %} 
+{% block title %}Página Principal{% endblock title %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'index.css' %}" />
+{% endblock css %}
+
+{% block content %}
+<body>
+    <div id="cartao">
+      <img src="{% static 'cartao.jpg' %}" alt="" id="imageminicial" />
+      <h1>Bem-vindos ao Rio de Janeiro</h1>
+    </div>
+
+    <div id="containerimgagenstexto">
+      <div id="imagens-pequenas">
+        <img src="{% static 'carnaval.jpg' %}" alt="" />
+        <img src="{% static 'catete.jpg' %}" alt="" />
+        <img src="{% static 'maracana.jpg' %}" alt="" />
+      </div>
+
+      <h3>Cartão Postal do Brasil</h3>
+    </div>
+  </body>
+{% endblock content %}
+
+
+
+

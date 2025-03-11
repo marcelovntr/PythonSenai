@@ -1,0 +1,45 @@
+{% extends "myproject/global/index.html" %}
+{% load static %} 
+{% block title %}Opções Turísticas{% endblock title %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'turismo.css' %}" />
+{% endblock css %}
+
+{% block content %}
+<body>
+    
+    <div id="container-principal">
+    <img src="{% static 'rio.jpg' %}" alt="">
+
+    <h1> RIO DE JANEIRO </h1>
+        <h2> Corcovado - Cristo Redentor </h2>
+        <p> O Cristo Redentor, situado no topo do Morro do Corcovado, é uma das Sete Maravilhas do Mundo Moderno. Inaugurado em 1931,
+             este monumento de 30 metros de altura, criado pelo engenheiro Heitor da Silva Costa com o apoio do escultor francês Paul Landowski, oferece
+            vistas panorâmicas deslumbrantes do Rio de Janeiro a 710 metros acima do nível do mar. Este Santuário a céu aberto é um símbolo de fé e acolhimento, 
+            recebendo visitantes de todas as culturas e religiões. Elevado ao status de Santuário Arquidiocesano em 2006, o Cristo Redentor desempenha um papel 
+            religioso e cultural vital. Ele apoia ações sociais e ambientais alinhadas aos Objetivos de Desenvolvimento Sustentável da ONU.
+            O monumento também hospeda iluminações especiais e eventos culturais, apoiando várias causas sociais. Atraindo milhões de turistas anualmente, tem um impacto 
+            significativo na economia e no turismo local. Visite o Cristo Redentor para experimentar a paz e a beleza deste ícone brasil, sempre de braços abertos
+        </p>
+
+        <img src="{% static 'cristo-redentor-corcovado-rio-de-janeiro.webp' %}" alt="">
+        
+    <h3> Escadaria Selarón</h3>
+        <p>A Escadaria Selarón, construida em 1926, foi inaugurada em 1929, e tem 28 andares com 3.000 metros de altura, sendo a mais alta da cidade.A Escadaria Selarón é um dos pontos mais visitados da Lapa e também já serviu de cenário para artistas internacionais gravarem vídeos. O local fica em uma região tradicional da 
+            cidade e a escadaria leva a outro bairro especial: Santa Teresa.
+        </p>
+
+        <img src="{% static 'escadaria.jpg' %}" alt="">
+        
+
+    <h5> Centro Cultural Jerusalém</h5>
+    <p>O local abriga como exposição permanente uma maquete (réplica) da cidade de Jerusalém no século I d.C., 
+        feita com pedras brancas importadas de Israel. Sua construção levou cinco anos para ser concluída e foi delineada com o trabalho de modelos e 
+        arqueólogos brasileiros da Universidade Hebraica de Jerusalém.</p>
+        
+       <img src="{% static 'images.jpg' %}" alt="">
+    </div>
+
+</body>
+{% endblock content %}

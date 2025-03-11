@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}{% endblock title %}</title>
+
+    <link rel="stylesheet" href="{% static 'header.css' %}" />
+    <link rel="stylesheet" href="{% static 'footer.css' %}" />
+    {% block css %}{% endblock css %} 
+    {% comment %} <link rel="stylesheet" href="{% static 'index.css' %}" /> {% endcomment %}
+    
+  </head>
+
+  <body>
+    {% include "myproject/partials/header.html" %} 
+    
+    {% block content %}{% endblock content %}
+
+    {% include "myproject/partials/footer.html" %} 
+  </body>
+</html>
