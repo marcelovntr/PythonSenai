@@ -1,0 +1,29 @@
+{% if usuario_ativo %}
+    <p>e aê, usuário ativo!</p>
+{% endif %} {% if idade < 18 %}
+    <p>"De menor"!</p>
+
+    
+{% elif idade >=18 and idade<60 %}
+    <p>de maior</p>
+{% endif %} {% if autenticado %}
+    <p>bem-vindo, {{nome_usuario}}!</p>
+{% else %}
+    <p>faça login</p>
+{% endif %}
+
+<p>Bem-vindo, {{ nome_usuario }}!</p>
+<img src="{{ url_imagem }}" alt="Imagem do Produto" />
+<ul>
+    {% for produto in lista_produtos %}
+        <li>{{ produto.nome }} Preço: {{ produto.preco }}</li>
+    {% endfor %}
+</ul>
+
+<ul>
+    {% for item in lista_itens%}
+    <li>
+        {{item}}
+    </li>
+    {% endfor %}
+</ul>

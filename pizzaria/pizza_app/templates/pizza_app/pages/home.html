@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+<header>
+    <nav class="menu">
+        <ul>
+            <li><a href="#">cardapio</a></li>
+            <li><a href="#">carrinho</a></li>
+            <li><a href="#">promoções</a></li>
+            <li><a href="#">contato</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="cardapio">
+            <div class="carpadio-item">
+                <img src="" alt="">
+                <h3>pizza 4 queijos</h3>
+                <p>ingredientes huauhauh, huahua, ppipipi</p>
+                <span>R$ 90,00</span>
+                <a href="">adicionar ao carrinho</a>
+            </div>
+           {% for pizza in produtos %}
+            <div class="carpadio-item">
+                <img src="{{pizza.img}}" alt="">
+                <h3>{{pizza.nome}}</h3>
+                <p>{{pizza.ingredientes}}</p>
+                <span>{{pizza.preco}}</span>
+            </div>
+           {% endfor %}
+        </div>
+    </main>
+    <footer>
+        teste
+    </footer>
+</header>
+</body>
+</html>
