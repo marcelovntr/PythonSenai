@@ -1,12 +1,14 @@
 {% if usuario_ativo %}
     <p>e aê, usuário ativo!</p>
-{% endif %} {% if idade < 18 %}
-    <p>"De menor"!</p>
+{% endif %} 
 
-    
+{% if idade < 18 %}
+    <p>"De menor"!</p>
 {% elif idade >=18 and idade<60 %}
     <p>de maior</p>
-{% endif %} {% if autenticado %}
+{% endif %} 
+
+{% if autenticado %}
     <p>bem-vindo, {{nome_usuario}}!</p>
 {% else %}
     <p>faça login</p>
