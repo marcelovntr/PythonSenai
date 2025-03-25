@@ -1,13 +1,20 @@
+{% extends "pizza_app/global/index.html" %}
 {% load static %}
-<!DOCTYPE html>
+{% block title %}Página Principal{% endblock title %}
+{% block css %}
+  <link rel="stylesheet" href="{% static 'home.css' %}" />
+{% endblock css %}
+
+{% comment %} <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-</head>
+</head> {% endcomment %}
+{% block content %}
 <body>
-<header>
+{% comment %} <header>
     <nav class="menu">
         <ul>
             <li><a href="#">cardapio</a></li>
@@ -16,28 +23,34 @@
             <li><a href="#">contato</a></li>
         </ul>
     </nav>
+</header> {% endcomment %}
     <main>
         <div class="cardapio">
-            <div class="carpadio-item">
+            {% comment %} <div class="carpadio-item">
                 <img src="" alt="">
                 <h3>pizza 4 queijos</h3>
                 <p>ingredientes huauhauh, huahua, ppipipi</p>
                 <span>R$ 90,00</span>
+                <button>adicionar ao carrinho</button>
                 <a href="">adicionar ao carrinho</a>
-            </div>
+            </div> {% endcomment %}
            {% for pizza in produtos %}
-            <div class="carpadio-item">
+            <div class="cardapio-item">
                 <img src="{{pizza.img}}" alt="">
                 <h3>{{pizza.nome}}</h3>
-                <p>{{pizza.ingredientes}}</p>
+                <p>{{pizza.detalhes}}</p>
                 <span>{{pizza.preco}}</span>
+                <div class="cardapio-botoes">
+                    <button>detalhes</button>
+                    <button>adquirir</button>
+                </div>
             </div>
            {% endfor %}
         </div>
     </main>
-    <footer>
-        teste
-    </footer>
-</header>
+   
+
 </body>
+
+{% endblock content %}
 </html>
