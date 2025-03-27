@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from pizza_app.models import PizzaModel
 
 # Create your views here.
 def home(request):
@@ -41,6 +42,29 @@ def home(request):
             'preco': 'R$ ??,??',
         },
     ]
+    lista_produtos = PizzaModel.objects.all()
     return render(request, "pizza_app/pages/home.html", context={'produtos': lista_produtos})
-# def sobre(request):
-#     return render(request, 'sobre.html')
+
+def criar_pizza(request):
+    if request.method == 'GET':
+        return render(request, 'pizza_app/pages/pizza.html')
+    
+    img = request.POST.get('img')
+    nome = request.POST.get('nome')
+    detalhes = request.POST.get('detalhes')
+    preco = request.POST.get('preco')
+    PizzaModel.objects.create(img=img, nome=nome, detalhes=detalhes, preco=preco)
+    return render(request, 'pizza_app/pages/pizza.html', context={'nome': nome})
+
+def listar_pizzas(request):
+    nomes= PizzaModel.objects.all()
+    return render(request, 'pizza_app/pages/listar.html', context={'nomes': nomes})
+
+def deletar_pizza(resquest, id):
+    nome = PizzaModel.objects.get(id=id)
+    nome.delete()
+    return redirect('listar')
+
+def atualizar_pizza(request, id):
+    nome = PizzaModel.objects.get(id=id)
+    return render(request, 'pizza_app/pages/pizza.html', context={'nome': nome})

@@ -1,0 +1,31 @@
+{% extends "pizza_app/global/index.html" %}
+{% load static %}
+{% block title %}Criar Pizza{% endblock title %}
+{% block css %}
+  <link rel="stylesheet" href="{% static 'pizza_app/css/pizza.css' %}" />
+{% endblock css %}
+
+{% block content %}
+    
+
+<main>
+    <h1>Criar Pizza</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        <label for="nome">Nome</label>
+        <input type="text" name="nome" placeholder="Nome da pizza">
+        <label for="detalhes">Detalhes</label>
+        <input type="text" name="detalhes" placeholder="Detalhes do item">
+        <label for="preco">Preço</label>
+        <input type="text" name="preco" placeholder="Preço atual">
+        <label for="img">Imagem</label>
+        <input type="text" name="img" placeholder="URL da imagem">
+        <button type="submit">Criar</button>
+    </form>
+    {% if nome %}
+        <ul>
+        A pizza "{{ nome }}" foi criada com sucesso!</li>
+        </ul>
+    {% endif %}
+</main>
+{% endblock content %}
