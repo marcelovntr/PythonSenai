@@ -9,12 +9,13 @@
     
 
 <main>
-    <h1>Lista de Pizzas</h1>
+    <h1>Lista de Cursos</h1>
     <ul>
         {% for pizza in nomes %}
         <li>
-            <p>{{ pizza.nome }} - {{ pizza.detalhes }} - {{ pizza.preco }} - {{ pizza.img }} <a href="{% url 'deletar_pizza' pizza.id %}">Remover pizza</a> - <a href="{% url 'atualizar_pizza' pizza.id %}">Atualizar pizza</a></p>
             <img src="{{ pizza.img }}" alt="">
+            <p>{{ pizza.nome }} - {{ pizza.detalhes }} - {{ pizza.preco }} - <a href="{% url 'deletar_pizza' pizza.id %}">Remover</a> - <a href="{% url 'atualizar_pizza' pizza.id %}">Atualizar</a></p>
+            
         </li>
         {% endfor %}
     </ul>

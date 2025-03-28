@@ -66,5 +66,15 @@ def deletar_pizza(resquest, id):
     return redirect('listar')
 
 def atualizar_pizza(request, id):
-    nome = PizzaModel.objects.get(id=id)
-    return render(request, 'pizza_app/pages/pizza.html', context={'nome': nome})
+    if request.method == 'GET':
+        nome = PizzaModel.objects.get(id=id)
+        return render(request, 'pizza_app/pages/atualizar_pizza.html', context={'nome': nome})
+    
+    img = request.POST.get('img')
+    nome = request.POST.get('nome')
+    detalhes = request.POST.get('detalhes')
+    preco = request.POST.get('preco')
+    # PizzaModel.objects.create(img=img, nome=nome, detalhes=detalhes, preco=preco)
+    # return render(request, 'listar')
+    PizzaModel.objects.filter(id=id).update(img=img, nome=nome, detalhes=detalhes, preco=preco)
+    return redirect('listar')

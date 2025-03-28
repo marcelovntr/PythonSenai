@@ -1,0 +1,31 @@
+{% extends "pizza_app/global/index.html" %}
+<!-- {% load static %} -->
+{% block title %}Atualizar Pizza{% endblock title %}
+<!-- {% block css %}
+  <link rel="stylesheet" href="{% static 'pizza_app/css/atualizar.css' %}" />
+{% endblock css %} -->
+
+{% block content %}
+    
+
+<main>
+    <h1>Atualizar Pizza</h1>
+    <form action="{% url 'atualizar_pizza' nome.id %}" method="post">
+        {% csrf_token %}
+        <label for="nome">Nome</label>
+        <input type="text" name="nome" placeholder="Nome da pizza" value="{{ nome.nome}}">
+        <label for="detalhes">Detalhes</label>
+        <input type="text" name="detalhes" placeholder="Detalhes do item" value="{{ nome.detalhes}}">
+        <label for="preco">Preço</label>
+        <input type="text" name="preco" placeholder="Preço atual" value="{{ nome.preco}}">
+        <label for="img">Imagem</label>
+        <input type="text" name="img" placeholder="URL da imagem" value="{{ nome.img}}">
+        <button type="submit">Atualizar</button>
+    </form>
+    <!-- {% if nome %}
+        <ul>
+        A pizza "{{ nome }}" foi criada com sucesso!</li>
+        </ul>
+    {% endif %} -->
+</main>
+{% endblock content %}
