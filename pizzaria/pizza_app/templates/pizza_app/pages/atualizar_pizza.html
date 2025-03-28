@@ -1,6 +1,6 @@
 {% extends "pizza_app/global/index.html" %}
 <!-- {% load static %} -->
-{% block title %}Atualizar Pizza{% endblock title %}
+{% block title %}Atualizar Dados{% endblock title %}
 <!-- {% block css %}
   <link rel="stylesheet" href="{% static 'pizza_app/css/atualizar.css' %}" />
 {% endblock css %} -->
@@ -9,7 +9,7 @@
     
 
 <main>
-    <h1>Atualizar Pizza</h1>
+    <h1>Atualizar Dados</h1>
     <form action="{% url 'atualizar_pizza' nome.id %}" method="post">
         {% csrf_token %}
         <label for="nome">Nome</label>

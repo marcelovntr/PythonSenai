@@ -22,9 +22,9 @@
         <input type="text" name="img" placeholder="URL da imagem">
         <button type="submit">Criar</button>
     </form>
-    {% if nome %}
+    {% if nome.nome %}
         <ul>
-        A pizza "{{ nome }}" foi criada com sucesso!</li>
+        <li>A pizza "{{ nome.nome }} com o id "{{ nome.id }}" " foi criada com sucesso!</li>
         </ul>
     {% endif %}
 </main>

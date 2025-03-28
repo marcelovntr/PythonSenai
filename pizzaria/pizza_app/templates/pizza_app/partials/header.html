@@ -1,8 +1,10 @@
 <header>
     <nav class="menu">
         <ul>
-            <li><a href="#">Lista</a></li>
-            <li><a href="#">Carrinho</a></li>
+            <li><a href="{% url 'home' %}">Cursos</a></li>
+            <li  class="carrinho"><a href="{% url "comprar_carrinho_pizza" %}">Carrinho</a>
+                 {% if request.session.quantidade_itens %}
+                 <span class="carrinho-quantidade">({{ request.session.quantidade_itens }})</span> {% endif %}</li>
             <li><a href="#">Promoções</a></li>
             <li><a href="#">Contato</a></li>
         </ul>

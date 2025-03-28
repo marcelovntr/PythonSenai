@@ -1,0 +1,23 @@
+{% extends "pizza_app/global/index.html" %}
+{% comment %} {% load static %} {% endcomment %}
+{% block title %}Carrinho{% endblock title %}
+{% comment %} {% block css %}
+  <link rel="stylesheet" href="{% static 'pizza_app/css/listar.css' %}" />
+{% endblock css %} {% endcomment %}
+
+{% block content %}
+    
+
+<main>
+    <h1>Lista do Carrinho</h1>
+    <ul>
+        {% for pizza in itens %}
+        <li>
+            <img src="{{ pizza.img }}" alt="">
+            <p>{{ pizza.nome }} - {{ pizza.detalhes }} - {{ pizza.preco }} </p>
+            
+        </li>
+        {% endfor %}
+    </ul>
+</main>
+{% endblock content %}

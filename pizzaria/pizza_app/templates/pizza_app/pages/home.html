@@ -5,25 +5,11 @@
   <link rel="stylesheet" href="{% static 'pizza_app/css/home.css' %}" />
 {% endblock css %}
 
-{% comment %} <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-</head> {% endcomment %}
+
 {% block content %}
 <body>
-{% comment %} <header>
-    <nav class="menu">
-        <ul>
-            <li><a href="#">cardapio</a></li>
-            <li><a href="#">carrinho</a></li>
-            <li><a href="#">promoções</a></li>
-            <li><a href="#">contato</a></li>
-        </ul>
-    </nav>
-</header> {% endcomment %}
+
+<h1>Conteúdo Disponível</h1>
     <main>
         <div class="cardapio">
             {% comment %} <div class="carpadio-item">
@@ -41,8 +27,11 @@
                 <p>{{pizza.detalhes}}</p>
                 <span>{{pizza.preco}}</span>
                 <div class="cardapio-botoes">
-                    <button>detalhes</button>
-                    <button>adquirir</button>
+                    <button>Info</button>
+                    {% comment %} <a href="{% url "carrinho_pizza" pizza.id %}"></a> {% endcomment %}
+                    <button><a href="{% url "carrinho_pizza" pizza.id %}">Adicionar</a></button>
+                    {% comment %} <button onclick="adicionarAoCarrinho({{pizza.id}})">Add</button> {% endcomment %}
+                    
                 </div>
             </div>
            {% endfor %}
@@ -51,5 +40,21 @@
    
 
 </body>
-
+{% comment %} <script>
+    function adicionarAoCarrinho(pizzaId) {
+        fetch(`/carrinho/${pizzaId}`, {
+            method: "GET",
+        })
+        .then(response => response.text())
+        .then(message => {
+            {% comment %} alert(message);  {% endcomment %}
+            {% comment %} window.location.href = "/carrinho/" + pizzaId;
+        })
+        .catch(error => {
+            console.error("Erro:", error);
+            alert("Erro ao adicionar ao carrinho.");
+        });
+    } {% endcomment %}
+{% comment %} </script>  
+{% endcomment %}
 {% endblock content %}
