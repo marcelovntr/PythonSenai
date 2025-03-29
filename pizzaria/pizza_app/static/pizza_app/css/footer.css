@@ -1,0 +1,12 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+footer{
+    background-color: rgb(192, 245, 227);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: blueviolet;
+}
