@@ -53,7 +53,8 @@ main button {
 }
 
 main button:hover {
-    background-color: rgb(40, 243, 175);
+    background-color: #ff2c99;
+    color: rgb(192, 245, 227);
 }
 
 main ul {

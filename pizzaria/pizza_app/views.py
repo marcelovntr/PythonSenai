@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect
 # from django.http import HttpResponse
-from pizza_app.models import PizzaModel
+from pizza_app.models import PizzaModel, UsuarioModel
 from django.core.mail import send_mail
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login, logout
 
 # Create your views here.
 def home(request):
@@ -59,7 +61,7 @@ def carrinho_pizza(request, id):
    itens.append(id)
    request.session['item'] = itens
 
-   quantidade_itens = request.session.get('quantidade_itens', 0)
+   quantidade_itens = request.session.get('quantidade_itens', 0) #seria possível retirar essa linha, segundo eu + GPT
    quantidade_itens = len(itens)
    request.session['quantidade_itens'] = quantidade_itens
    #return HttpResponse('Conteúdo adicionado ao carrinho!')
@@ -68,7 +70,7 @@ def carrinho_pizza(request, id):
 def comprar_carrinho_pizza(request):
     itens = request.session.get('item', [])
     lista_itens = []
-    for item in itens:
+    for item in itens: #este for foi inserido para ser possível obter itens repitidos do banco de dados
         item = PizzaModel.objects.get(id=item)
         lista_itens.append(item)
     return render(request, 'pizza_app/pages/listar_carrinho.html', context={'itens': lista_itens, 'quantidade_itens': len(itens)})
@@ -83,3 +85,25 @@ def mandar_email(usuario,mensagem,titulo):
     [usuario],
     fail_silently=False,
 )
+    
+def cadastrar_usuario(request):
+    if request.method == 'POST':
+        usuario = request.POST.get('usuario')
+        email = request.POST.get('email')
+        senha = request.POST.get('senha')
+        if usuario and email and senha:
+            User.objects.create_user(usuario=usuario, email=email, senha=senha)
+        return render(request, 'login.html') 
+    return render(request, 'pizza_app/pages/cadastro_usuario.html')
+
+def login_request(request):
+    message = ''
+    if request.method == 'POST':
+        usuario = request.POST.get('usuario')
+        senha = request.POST.get('senha')
+        user = authenticate(request, username=usuario, password=senha)
+        if user is not None:
+            login(request, user)
+            return redirect('home')
+        message = 'Usuário ou senha inválidos'
+    return render(request, 'pizza_app/pages/login.html', {'message': message})

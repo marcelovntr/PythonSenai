@@ -88,17 +88,18 @@ border-radius: 6px;
 }
 .cardapio-botoes button:first-child{
 background-color:#fff;
-color:#9841bd;
+color: #FA0D88;
 font-weight: bold;
 }
 .cardapio-botoes button:first-child:hover{
 background-color:#d3d0d0;
 }
 .cardapio-botoes button:last-child{
-background-color: rgb(192, 245, 227);
+background-color: #ff2c99;
 color:#9841bd;
 font-weight: bold;
 }
 .cardapio-botoes button:last-child:hover{
-background-color: rgb(139, 231, 201);
+background-color: #df0877;
+color: rgb(192, 245, 227);
 }

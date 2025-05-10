@@ -8,6 +8,8 @@ Criar o ambiente virtual:
 
  ```bash
 pip install virtualenv
+
+#(.venv ou somente venv)
 python -m venv .venv
  ```
 
@@ -15,8 +17,9 @@ Atualizar o gerenciador de pacotes:
 ```bash
 python.exe -m pip install --upgrade pip
 ```
-Ativar o ambiente virtual (Certifique-se de estar na pasta correta):
+Ativar o ambiente virtual (Certifique-se de estar na pasta correta - após fazer os passos do venv):
 ```bash
+#.venv ou venv, depende de como nomeou a pasta venv
 .\.venv\Scripts\Activate.ps1  # Para Windows (PowerShell)
 source .venv/bin/activate       # Para Linux/Mac
 ```
@@ -34,7 +37,7 @@ Observação: Esse comando cria uma pasta oremos, dentro dela haverá outra past
 
 4. Rodando o Servidor de Desenvolvimento
 
-Dentro da pasta do projeto, execute:
+Dentro da pasta do projeto (cd oremos), execute:
 ```bash
 python manage.py runserver
 ```
@@ -71,10 +74,13 @@ views.py: Lida com a lógica de exibição da aplicação.
 
 Abra settings.py na pasta do projeto e adicione o nome do aplicativo à lista INSTALLED_APPS:
 
+```bash
 INSTALLED_APPS = [
     ...
     'app_site',
 ]
+
+```
 
 7. Configuração de Rotas (URLs)
 
@@ -82,6 +88,7 @@ No Arquivo urls.py do Projeto (oremos/urls.py):
 
 Adicione include às importações:
 
+```bash
 from django.contrib import admin
 from django.urls import path, include
 
@@ -90,10 +97,13 @@ urlpatterns = [
     path('', include('app_site.urls')),  # Redireciona para as rotas do app
 ]
 
+```
+
 Criando urls.py Dentro de app_site
 
 Crie um arquivo urls.py dentro da pasta app_site e adicione:
 
+```bash
 from django.urls import path
 from . import views
 
@@ -101,11 +111,12 @@ urlpatterns = [
     path('', views.home),
     path('sobre/', views.sobre),
 ]
-
+```
 8. Criando as Views
 
 No arquivo views.py dentro de app_site, crie as funções de exibição:
 
+```bash
 from django.shortcuts import render
 
 def home(request):
@@ -113,6 +124,7 @@ def home(request):
 
 def sobre(request):
     return render(request, 'sobre.html')
+```
 
 9. Criando os Templates
 
@@ -134,11 +146,13 @@ No HTML, carregar os arquivos estáticos
 
 Dentro dos templates (index.html, sobre.html, etc.), adicione no topo:
 
+```bash
 {% load static %}
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
+```
 
 No settings.py, adicione a configuração para arquivos estáticos:
-
+```bash
 from pathlib import Path
 import os
 
@@ -146,11 +160,12 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
-
+```
 11. Executando o Servidor Novamente
 
 Após realizar as configurações, rode o servidor novamente:
-
+```bash
 python manage.py runserver
+```
 
 Acesse no navegador: http://127.0.0.1:8000

@@ -8,11 +8,11 @@
 {% block content %}
     
 
-<main>
+<main class="main-carrinho">
     <h1>Lista do Carrinho</h1>
-    <ul>
+    <ul class="lista-carrinho">
         {% for pizza in itens %}
-        <li>
+        <li class="item-carrinho">
             <img src="{{ pizza.img }}" alt="">
             <p>{{ pizza.nome }} - {{ pizza.detalhes }} - {{ pizza.preco }} </p>
             

@@ -1,0 +1,24 @@
+{% extends "pizza_app/global/index.html" %}
+{% load static %}
+{% block title %}Criar Uuário{% endblock title %}
+{% comment %} {% block css %}
+  <link rel="stylesheet" href="{% static 'pizza_app/css/pizza.css' %}" />
+{% endblock css %} {% endcomment %}
+
+{% block content %}
+    
+
+<main class="main-cadastro-usuario">
+    <h1>Criar Usuário</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        <label for="usuario">Nome de Usuário</label>
+        <input type="text" name="usuario" placeholder="Nome de usuario" required>
+        <label for="email">email</label>
+        <input type="email" name="email" placeholder="emaildo usuário" required>
+        <label for="senha">Senha</label>
+        <input type="password" name="senha" placeholder="Senha de usuário" required>
+        <button type="submit">Cadastrar</button>
+    </form>
+</main>
+{% endblock content %}

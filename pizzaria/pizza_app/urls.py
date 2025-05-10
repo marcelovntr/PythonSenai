@@ -10,6 +10,8 @@ urlpatterns = [
     path("carrinho/<int:id>", views.carrinho_pizza, name='carrinho_pizza'),
     path("carrinho/", views.comprar_carrinho_pizza, name='comprar_carrinho_pizza'),
     
+    path('cadastro_usuario/', views.cadastrar_usuario, name='cadastrar_usuario'),
+    path('login/', views.login_usuario, name='login_usuario'),
 ]
 
 
