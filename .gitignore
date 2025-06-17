@@ -54,3 +54,8 @@ config/settings/dev.py
 .dockerignore
 docker-compose.override.yml
 *.bak
+
+modulo02-mentoria01/
+modulo02-mentoria02/
+modulo02-mentoria03/
+modulo02-mentoria04/
