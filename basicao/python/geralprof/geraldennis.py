@@ -24,7 +24,7 @@ endereco = {
 endereco["complemento"] = "Apto 101"
 
 compras = ['maçã', 'banana', 'pão', 'leite']  #Lista mutável
-exemplo_tupla = ('maçã', 'banana', 'pão', 'leite')  #Tupla imutável
+exemplo_tupla = ('maçã', 'banana', 'pão', 'leite')  #Tupla é imutável
 
 compras.append("macarrão") # add item
 compras.append("arroz") # add item
@@ -51,7 +51,7 @@ soma = 10 + 5
 subtracao = 10 - 5
 multiplicacao = 10 * 5
 divisao = 10 / 5
-divisao_inteira = 10 // 5
+divisao_inteira = 10 // 5 #********************************
 modulo = 10 % 5
 exponenciacao = 10**5
 
@@ -264,11 +264,11 @@ if numero_par % 2 == 0:
     print("Esse numero é par")
 
 # Erro e tratamento de erros
-idade = input("Informe sua idade para calcular o ano do seu nascimento: ")
+idade = int(input("Informe sua idade para calcular o ano do seu nascimento: "))
 
 try:
     ano_nascimento = 2024 - idade
-
+    #print("O ano do seu nascimento é:", ano_nascimento)
 except:
     print("Aconteceu um erro")
 

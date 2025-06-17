@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./lista.css">
+</head>
+<body>
+    <h1>testando lista</h1>
+    <h3>Carrinho de tarefas: <span id="contador-tarefas"></span></h3>
+    <div class="container-formulario">
+        <form id="form-tarefa">
+            <label for="novatarefa">Tarefa</label>
+            <input type="text" name="novatarefa" placeholder="Digite sua tarefa">
+            <button type="submit">Adicionar</button>
+            <!-- aqui: recarrega a pagina ao clicar no botao -->
+             <!-- com onclick="addTask()" -->
+        </form>
+    </div>
+    <div class="container-tarefas">
+        <h2>Tarefas:</h2>
+        <ul class="lista-tarefas">
+
+        </ul>
+
+    </div>
+
+    <div class="container-logiut">
+        <button type="button" onclick="logOut()">Logout</button>
+    </div>
+    <script src="./lista.js"></script>
+</body>
+</html>

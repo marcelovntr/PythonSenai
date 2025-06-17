@@ -1,0 +1,38 @@
+{% extends "revisao_app/global/index.html" %}
+{% load static %}
+{% block title %}Atualizar Item{% endblock title %}
+
+{% block content %}
+
+    <main class="container-criar">
+        <h2>Atualizar Item</h2>
+        <form action="{% url 'atualizar_item' item_achado.id %}" method="post">
+            {% csrf_token %}
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" value={{item_achado.nome}}>
+
+            <label for="sobrenome">Sobrenome</label>
+            <input type="text" name='sobrenome' value={{item_achado.sobrenome}}>
+
+            <label for="email">Email</label>
+            <input type="email" name='email' value={{item_achado.email}}>
+
+            <button type="submit">Atualizar</button>
+        </form>
+
+
+          {% if messages %}
+            
+                <ul>
+                    {% for message in messages %}
+                        <li {% if "success" in message.tags %} style= "color: var(--color); background-color: var(--color2);" {% else %} style= "color: red; background-color: var(--color2);"{% endif %}>
+                                {{ message }}
+                        </li>
+                     {% endfor %}
+                </ul>    
+           
+        {% endif %}
+    </main>
+
+
+{% endblock content %}

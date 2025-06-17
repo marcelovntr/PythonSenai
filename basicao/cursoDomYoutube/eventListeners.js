@@ -20,8 +20,10 @@ const newBoxThree = document.querySelector('.box-3');
 newBoxThree.addEventListener('mouseover', function() {
     newBoxThree.style.backgroundColor = 'pink';
     newBoxThree.style.transform = 'scale(1.2)';
+    newBoxThree.style.color ='  #575151';
 });
 newBoxThree.addEventListener('mouseout', function() {
     newBoxThree.style.backgroundColor =' #575151';
     newBoxThree.style.transform = 'scale(1)';
+    newBoxThree.style.color ='white';
 });

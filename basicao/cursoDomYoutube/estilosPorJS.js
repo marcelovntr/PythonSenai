@@ -4,7 +4,7 @@ const titulo = document.getElementById("main-heading");
 const titulao = document.querySelector("#main-heading");
 console.log(titulao);
 //<h1 id="main-heading" style="color: pink;">Filme Favorito</h1>
-titulao.style.color = "pink";
+titulao.style.color = "red";
 
 const itemLista = document.querySelectorAll(".list-item");
 console.log(itemLista);
@@ -78,21 +78,6 @@ console.log(listItem1.classList.contains('list-item'));
 
 listItem1.setAttribute('class', 'list-item'); //recebe a classe mas ñ o CSS pq não tenho um CSS
 
+// #####################################
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+document.querySelector('body').style.backgroundColor = 'lightGrey';

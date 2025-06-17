@@ -1,0 +1,38 @@
+{% extends "revisao_app/global/index.html" %}
+{% load static %}
+{% block title %}Listagem de Itens{% endblock title %}
+
+{% block content %}
+
+    <main class="container-listagem">
+        <h2>Itens Cadastrados:</h2>
+        
+            {% for item in itens %}
+                <ul>
+                    <li>{{item.nome}} -- {{item.sobrenome}} -- {{item.email}} -- 
+                        <a href="{% url 'atualizar_item' item.id %}">atualizar</a> -- 
+                        <a href="{% url 'deletar_item' item.id %}" onclick="return confirmarDelete('{{ item.nome }}')">deletar</a></li>
+                    
+                    
+                </ul>
+                {% empty %}
+                    <p>ainda não possuimos itens cadastrados!</p>
+            {% endfor %}
+         
+
+              {% if messages %}
+            
+                <ul>
+                    {% for message in messages %}
+                        <li {% if "success" in message.tags %} style= "color: var(--color); background-color: var(--color2);" {% else %} style= "color: red; background-color: var(--color2);"{% endif %}>
+                                {{ message }}
+                        </li>
+                     {% endfor %}
+                </ul>    
+           
+        {% endif %}
+           
+    </main>
+<script src="{% static 'revisao_app/js/funcoes.js' %}"></script> 
+
+{% endblock content %}

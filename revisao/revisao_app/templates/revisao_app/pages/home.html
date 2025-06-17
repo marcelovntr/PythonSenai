@@ -1,0 +1,15 @@
+{% extends "revisao_app/global/index.html" %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+{% block content %}
+
+    <main class="containter-home">
+        <h1>Home</h1>
+        <p>Seja bem vindo ao nosso site</p>
+        <a href="{% url 'criar_item' %}">Criar</a>
+        <a href="{% url "listar_itens" %}">Listar</a>
+    
+     
+    </main>
+
+{% endblock content %}
