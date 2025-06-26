@@ -78,7 +78,7 @@ def main():
     
         print("\n4. Tentando criar um controle sem implementar o contrato:")
     try:
-        controle = ControleRemoto()  # Isso vai gerar um erro
+        controle = ControleAbstrato()  # Isso vai gerar um erro
     except TypeError as e:
         print(f"Erro: {e}")
         print("Não podemos criar um controle sem implementar o contrato!")
