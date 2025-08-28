@@ -1,0 +1,8 @@
+# Este arquivo lista as dependências do projeto.
+# Para instalar, use: pip install -r requirements.txt
+fastapi==0.111.0
+uvicorn==0.29.0
+pytest==8.1.1
+pytest-mock==3.12.0
+requests==2.32.3
+# O `pytest-mock` é o plugin para mocking no pytest.
