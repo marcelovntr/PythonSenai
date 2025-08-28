@@ -27,13 +27,13 @@ class MeuMenu:
 
             match opcao:
                 case "1":
-                    self.exemplo_vape()
+                    self.exemplo_vape()#classe básica
                 case "2":
-                    self.exemplo_conta_poupanca()
+                    self.exemplo_conta_poupanca()#encapsulamento
                 case "3":
-                    self.exemplo_veiculo()
+                    self.exemplo_veiculo()#herança
                 case "4":
-                    self.exemplo_formas()
+                    self.exemplo_formas()#abstração e polimorfismo
                 case "0":
                     print("\nSaindo do programa...")
                     break
@@ -130,12 +130,12 @@ class MeuMenu:
             print(controle.off())
             
         elif opcao == "ar":
-            controle_ar = ControleAc()
+            controle = ControleAc()
             print("\nControle de Ar Condicionado criado!")
             print(controle.on())
             temp = int(input("Digite a temperatura (16-30): "))
-            print(controle_ar.adjust(temp))
-            print(controle_ar.off())
+            print(controle.adjust(temp))
+            print(controle.off())
 
         else:
             print("Opção inválida!")

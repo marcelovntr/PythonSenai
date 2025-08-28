@@ -58,9 +58,14 @@ def main():
     motona.mostrar_info()
     motona.acelerar()
     motona.empinar()
+    #aqui é meu:
+    generico = Veiculo('Genérica', 'Específica', 1920)
+    generico.mostrar_info()
+    generico.acelerar()
+    generico.frear()
 
     print("\n3. O que todos os veículos podem fazer:")
-    veiculos = [carrinho, motona]
+    veiculos = [carrinho, motona, generico]
     for veiculo in veiculos:
         print(f"{veiculo.marca} {veiculo.modelo}")
         print(veiculo.acelerar())
@@ -69,6 +74,7 @@ def main():
     print("\n4. Verificando a herança:")
     print(f"Carro é um Veículo? {isinstance(carrinho, Veiculo)}")
     print(f"Moto é um Veículo? {isinstance(motona, Veiculo)}")
+    print(f"Veículo é um Veículo? {isinstance(generico, Veiculo)}")
 
 if __name__ == "__main__":
     main() 

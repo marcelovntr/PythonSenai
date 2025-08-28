@@ -22,12 +22,18 @@ class ControleTv(ControleAbstrato):
         return "TV on!"
     
     def off(self):
+        if not self.ligada:
+            return "TV is already off"
         self.ligada = False
         return "TV off!"
     
     def adjust(self, valor):
         if not self.ligada:
             return "TV is off"
+        ''' if valor < 0 or valor > 100:
+            return "Volume out of range" '''
+        #ou ainda:
+        #if not 0 <= valor <= 100:
         self.volume = max(0, min(100, valor))#menor entre 100 e valor.
                      #maior entre 0 e 100
         return f"Volume ajustado para {self.volume}"
@@ -54,7 +60,7 @@ class ControleAc(ControleAbstrato):
 def main():
     print("=== Exemplo Simples de Abstração ===")
     print("\nAbstração: 'contrato' que define obrigações.")
-    print("- Ligar; - Desligar; - Ajustar(vol., temp., etc)")
+    print("- Ligar; - Desligar; - Ajustar(vol./temp., etc)")
 
     print("1. Usando o controle da TV:")
     tv_controle = ControleTv()
@@ -72,11 +78,12 @@ def main():
     controles = [tv_controle, ar_controle]
     for controle in controles:
         print(f"\n{controle.__class__.__name__}:")
-        print(controle.ligar())
-        print(controle.ajustar(30))
-        print(controle.desligar())
+        print(controle.on())
+        print(controle.adjust(30))
+        print(controle.off())
     
-        print("\n4. Tentando criar um controle sem implementar o contrato:")
+    
+    print("\n4. Tentando criar um controle sem implementar o contrato:")
     try:
         controle = ControleAbstrato()  # Isso vai gerar um erro
     except TypeError as e:

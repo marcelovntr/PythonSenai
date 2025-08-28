@@ -18,7 +18,7 @@ class Poupanca:
     def saque(self, valor, senha):
         if senha != self.__senha:
             return "Senha incorreta!"
-        if 0 < valor <= self.saldo:
+        if 0 < valor <= self.__saldo:
             self.__saldo -= valor
         #if valor > 0 and valor <= self.__saldo:
             return f"Saque de {valor} efetuado de boas!"
@@ -49,19 +49,19 @@ def main():
         print("Não podemos acessar o saldo diretamente!")
     
     print("\n3. Usando os métodos corretos:")
-    print(conta.depositar(100, "1234"))
+    print(conta.deposito(100, "1234"))
     print(conta.ver_saldo())
 
     print("\nTentando depositar com senha errada:")
-    print(conta.depositar(50, "0000"))
+    print(conta.deposito(50, "0000"))
 
     print("\nSacando dinheiro:")
-    print(conta.sacar(30, "1234")) 
+    print(conta.saque(30, "1234")) 
     print(conta.ver_saldo())
 
     print("\n4. Mudando a senha:")
     print(conta.mudar_senha("1234", "4321"))  # Senha correta
-    print(conta.depositar(50, "4321"))  # Nova senha
+    print(conta.deposito(50, "4321"))  # Nova senha
     print(conta.ver_saldo())
 
 if __name__ == "__main__":
